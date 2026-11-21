@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; media-src 'self'; object-src 'self'; frame-src 'self' https://www.openstreetmap.org; base-uri 'self'; form-action 'self'">
+  <meta name="description"
+        content="Informe de revisión de seguridad y calidad del sitio de la Clínica Veterinaria ConSentidos.">
+  <meta name="author" content="Jhonatan Fernandez">
+  <title>Informe de revisión | Clínica Veterinaria ConSentidos</title>
+  <link rel="icon" href="assets/img/logo-consentidos.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/consentidos.css">
+</head>
+
+<body>
+  <a href="#contenido">Saltar al contenido</a>
+
+  <header id="inicio">
+    <img src="assets/img/logo-consentidos.svg" alt="" width="64" height="64">
+
+    <hgroup>
+      <h1>Informe de revisión</h1>
+      <p>Seguridad y calidad del sitio</p>
+    </hgroup>
+
+    <p>
+      Jhonatan Fernandez<br>
+      4GS121-05
+    </p>
+  </header>
+
+  <nav aria-label="Navegación del sitio">
+    <h2>El sitio</h2>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="componentes.html">Guía de componentes</a></li>
+      <li><a href="tarifas.html">Tarifas</a></li>
+      <li><a href="cita.html">Solicitar cita</a></li>
+      <li><a href="revision.html">Informe de revisión</a></li>
+      <li><a href="paginas/test.html">Página de prueba</a></li>
+    </ul>
+  </nav>
+
+  <main id="contenido">
+
+    <p>
+      Revisión del sitio completo, hecha el
+      <time datetime="2026-11-20">20 de noviembre de 2026</time>. Se
+      comprobaron las páginas publicadas y este informe.
+    </p>
+
+    <section id="csp">
+      <h2>Política de seguridad de contenidos</h2>
+
+      <p>
+        Se partió de una política restrictiva con <code>default-src 'self'</code> en la cabecera
+        <code>&lt;meta http-equiv="Content-Security-Policy"&gt;</code> ubicada justo después del
+        <code>viewport</code> en cada página, y se habilitaron únicamente los orígenes externos
+        necesarios para tipografías y mapas.
+      </p>
+
+      <div tabindex="0" role="region" aria-labelledby="cap-csp">
+        <table>
+          <caption id="cap-csp">Directivas de la política y por qué están</caption>
+          <thead>
+            <tr>
+              <th scope="col">Directiva</th>
+              <th scope="col">Valor</th>
+              <th scope="col">Por qué</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"><code>default-src</code></th>
+              <td><code>'self'</code></td>
+              <td>Regla por defecto: permite solo recursos del propio sitio.</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>script-src</code></th>
+              <td><code>'self'</code></td>
+              <td>Admite solo los archivos JavaScript locales y bloquea scripts en línea.</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>style-src</code></th>
+              <td><code>'self' https://fonts.googleapis.com</code></td>
+              <td>Permite hojas de estilo locales y las hojas importadas de Google Fonts.</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>font-src</code></th>
+              <td><code>https://fonts.gstatic.com</code></td>
+              <td>Autoriza la descarga de archivos tipográficos servidos por Google Fonts.</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>img-src</code></th>
+              <td><code>'self'</code></td>
+              <td>Restringe las imágenes a los recursos propios del sitio.</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>media-src</code></th>
+              <td><code>'self'</code></td>
+              <td>Limita audio y video a los archivos locales de ConSentidos.</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>object-src</code></th>
+              <td><code>'self'</code></td>
+              <td>Restringe contenido incrustado en objetos al origen del sitio.</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>frame-src</code></th>
+              <td><code>'self' https://www.openstreetmap.org</code></td>
+              <td>Permite marcos internos y el mapa incrustado de OpenStreetMap.</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>base-uri</code></th>
+              <td><code>'self'</code></td>
+              <td>Evita que se altere la URL base relativa del documento mediante <code>&lt;base&gt;</code>.</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>form-action</code></th>
+              <td><code>'self'</code></td>
+              <td>Limita el destino de envío de formularios al propio origen.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>
+        La directiva <code>frame-ancestors</code> no está activa en este sitio porque solo surte efecto
+        cuando se envía como cabecera HTTP desde el servidor y GitHub Pages no permite configurar
+        cabeceras HTTP personalizadas en una etiqueta <code>&lt;meta&gt;</code>.
+      </p>
+    </section>
+
+    <section id="verificacion">
+      <h2>Lista de verificación</h2>
+
+      <div tabindex="0" role="region" aria-labelledby="cap-verificacion">
+        <table>
+          <caption id="cap-verificacion">Comprobaciones en las páginas</caption>
+          <thead>
+            <tr>
+              <th scope="col">Comprobación</th>
+              <th scope="col">Resultado</th>
+              <th scope="col">Observación</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Validan sin errores en validator.w3.org</th>
+              <td>Cumple</td>
+              <td>Marcado HTML5 revisado sin errores críticos.</td>
+            </tr>
+            <tr>
+              <th scope="row">Un solo <code>h1</code> y jerarquía sin saltos</th>
+              <td>Cumple</td>
+              <td>Cada página mantiene un encabezado principal claro y orden semántico.</td>
+            </tr>
+            <tr>
+              <th scope="row"><code>alt</code> en las imágenes y <code>title</code> en los <code>iframe</code></th>
+              <td>Cumple</td>
+              <td>Imágenes decorativas con <code>alt=""</code> o descriptivo y marcos identificados.</td>
+            </tr>
+            <tr>
+              <th scope="row">Cada control con <code>label</code> y <code>name</code></th>
+              <td>Cumple</td>
+              <td>Controles de <code>cita.html</code> asociados explícitamente con <code>for</code>, <code>id</code> y <code>name</code>.</td>
+            </tr>
+            <tr>
+              <th scope="row">Tablas con <code>caption</code> y <code>scope</code></th>
+              <td>Cumple</td>
+              <td>Tablas descriptivas con encabezados y contenedores desplazables enfocables.</td>
+            </tr>
+            <tr>
+              <th scope="row">Enlaces a otra pestaña con <code>rel="noopener noreferrer"</code></th>
+              <td>Cumple</td>
+              <td>Enlaces externos con <code>target="_blank"</code> incluyen <code>rel="noopener noreferrer"</code>.</td>
+            </tr>
+            <tr>
+              <th scope="row">Recorrido completo con el teclado y foco visible</th>
+              <td>Cumple</td>
+              <td>Navegación secuencial con <code>Tab</code> y <code>Mayús+Tab</code> con foco visible.</td>
+            </tr>
+            <tr>
+              <th scope="row">Nombres en minúsculas y rutas que funcionan publicadas</th>
+              <td>Cumple</td>
+              <td>Rutas relativas coherentes entre páginas y subcarpetas.</td>
+            </tr>
+            <tr>
+              <th scope="row">Consola sin errores de la política</th>
+              <td>Cumple</td>
+              <td>En el sitio publicado no se bloquean recursos propios ni permitidos (solo el recargador de Live Server en local).</td>
+            </tr>
+            <tr>
+              <th scope="row">Accesibilidad en Lighthouse</th>
+              <td>Cumple</td>
+              <td>Puntuación superior a 90 en accesibilidad al auditar las páginas.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="validacion-cliente">
+      <h2>La validación del navegador no protege</h2>
+
+      <p>
+        Al intentar enviar <code>cita.html</code> vacío, el navegador bloquea el envío por los atributos
+        nativos como <code>required</code>; sin embargo, al eliminar <code>required</code> del campo de
+        correo o modificar el <code>value</code> de un campo <code>hidden</code> desde las herramientas
+        de desarrollo (<code>F12</code>), el navegador permite enviar los datos alterados o incompletos.
+        Esto demuestra que la validación en el cliente mejora la experiencia de usuario, pero la
+        integridad y seguridad real de los datos deben validarse siempre en el servidor.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <address>
+      <strong>Clínica Veterinaria ConSentidos</strong><br>
+      Avenida Central, Santiago de Veraguas, Panamá<br>
+      <a href="tel:+5079980000">+507 998-0000</a> |
+      <a href="mailto:citas@consentidos.example">citas@consentidos.example</a>
+    </address>
+
+    <p>
+      Última actualización:
+      <time datetime="2026-11-20">20 de noviembre de 2026</time>.
+    </p>
+
+    <p><a href="#inicio">Volver arriba</a></p>
+
+    <p>
+      <small>
+        &copy; 2026 Clínica Veterinaria ConSentidos. Proyecto académico del
+        curso Desarrollo de Software V, Universidad Tecnológica de Panamá,
+        Centro Regional de Veraguas. Los datos de contacto son ficticios.
+      </small>
+    </p>
+  </footer>
+</body>
+
+</html>

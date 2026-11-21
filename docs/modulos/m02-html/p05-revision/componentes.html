@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'; media-src 'self'; object-src 'self'; frame-src 'self' https://www.openstreetmap.org; base-uri 'self'; form-action 'self'">
+  <meta name="description" content="Guía de componentes HTML de la Clínica Veterinaria ConSentidos: listas, multimedia, interactivos e incrustaciones.">
+  <meta name="author" content="Jhonatan Fernandez">
+  <title>Guía de componentes | Clínica Veterinaria ConSentidos</title>
+  <link rel="icon" href="assets/img/logo-consentidos.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/consentidos.css">
+</head>
+<body>
+  <a href="#contenido">Saltar al contenido</a>
+
+  <header id="inicio">
+    <img src="assets/img/logo-consentidos.svg" alt="" width="64" height="64">
+    <hgroup>
+      <h1>Guía de componentes HTML</h1>
+      <p>Catálogo de referencia para el sitio de la Clínica Veterinaria ConSentidos</p>
+    </hgroup>
+    <p>
+      Jhonatan Fernandez<br>
+      4GS121-05
+    </p>
+  </header>
+
+  <nav aria-label="Navegación del sitio">
+    <h2>El sitio</h2>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="servicios.html">Servicios</a></li>
+      <li><a href="componentes.html">Guía de componentes</a></li>
+      <li><a href="tarifas.html">Tarifas</a></li>
+      <li><a href="cita.html">Solicitar cita</a></li>
+      <li><a href="paginas/test.html">Página de prueba</a></li>
+    </ul>
+
+    <h2>En esta guía</h2>
+    <ul>
+      <li><a href="#texto-y-enlaces">Texto y enlaces</a></li>
+      <li><a href="#listas">Listas y glosarios</a></li>
+      <li><a href="#multimedia">Imágenes, audio y video</a></li>
+      <li><a href="#interactivos">Componentes interactivos</a></li>
+      <li><a href="#incrustaciones">Contenido incrustado</a></li>
+    </ul>
+  </nav>
+
+  <main id="contenido">
+    <section id="texto-y-enlaces">
+      <h2>Texto y enlaces</h2>
+      <p>
+        En esta página documentamos los elementos HTML semánticos utilizados
+        en <strong>Clínica Veterinaria ConSentidos</strong>. Usamos
+        <em>énfasis semántico</em> cuando cambia el sentido de la frase,
+        marcamos fechas con <time datetime="2026-11-20">20 de noviembre de 2026</time>
+        y diferenciamos términos técnicos como <code>&lt;figure&gt;</code> o
+        abreviaturas como <abbr title="Organización Mundial de la Salud">OMS</abbr>.
+      </p>
+      <p>
+        Los enlaces permiten navegar entre páginas internas como
+        <a href="servicios.html">nuestros servicios</a>, descargar recursos
+        locales como la
+        <a href="assets/docs/guia-vacunacion.pdf" download>guía de vacunación en PDF</a>
+        o abrir sitios externos de forma segura con
+        <code>rel="noopener noreferrer"</code>.
+      </p>
+    </section>
+
+    <section id="listas">
+      <h2>Listas y glosarios</h2>
+      <h3>Lista ordenada con sublista anidada</h3>
+      <ol>
+        <li>Recepción y verificación de datos del tutor.</li>
+        <li>
+          Evaluación inicial
+          <ol type="a">
+            <li>Control de peso corporal.</li>
+            <li>Toma de temperatura y frecuencia cardíaca.</li>
+          </ol>
+        </li>
+        <li>Diagnóstico y plan de tratamiento.</li>
+      </ol>
+
+      <h3>Lista de definición (glosario)</h3>
+      <dl>
+        <dt>Anamnesis</dt>
+        <dd>Conjunto de datos clínicos recopilados en la entrevista inicial sobre el historial de la mascota.</dd>
+        <dt>Profilaxis</dt>
+        <dd>Conjunto de medidas preventivas para evitar enfermedades infecciosas o parasitarias.</dd>
+      </dl>
+    </section>
+
+    <section id="multimedia">
+      <h2>Imágenes, audio y video</h2>
+
+      <h3>Imagen con descripción y pie de figura</h3>
+      <figure>
+        <img src="assets/img/luna.svg"
+             alt="Ilustración vectorial de Luna, una gata gris atigrada sentada"
+             width="220" height="220" loading="lazy">
+        <figcaption>Figura 1. Ilustración vectorial de Luna en formato SVG.</figcaption>
+      </figure>
+
+      <h3>Audio informativo</h3>
+      <figure>
+        <figcaption>Recordatorio de cuidado para mascotas</figcaption>
+        <audio controls preload="metadata">
+          <source src="assets/media/recordatorio.mp3" type="audio/mpeg">
+          Tu navegador no soporta el elemento de audio HTML5.
+        </audio>
+      </figure>
+
+      <h3>Video educativo con subtítulos</h3>
+      <figure>
+        <video controls width="640" preload="metadata" poster="assets/media/consejos-poster.jpg">
+          <source src="assets/media/consejos.mp4" type="video/mp4">
+          <source src="assets/media/consejos.webm" type="video/webm">
+          <track src="assets/media/consejos-es.vtt" kind="subtitles" srclang="es" label="Español" default>
+          Tu navegador no soporta la reproducción de video HTML5.
+        </video>
+        <figcaption>Figura 2. Consejos en video con portada y subtítulos en español.</figcaption>
+      </figure>
+    </section>
+
+    <section id="interactivos">
+      <h2>Componentes interactivos</h2>
+
+      <h3>Preguntas frecuentes desplegables (<code>&lt;details&gt;</code>)</h3>
+      <details>
+        <summary>¿Qué debo llevar a la primera consulta de mi mascota?</summary>
+        <p>
+          Trae su cartilla de vacunación previa si la tiene, una muestra reciente
+          de heces si viene por desparasitación y anota cualquier cambio en su
+          apetito o comportamiento.
+        </p>
+      </details>
+
+      <details>
+        <summary>¿Cuánto tiempo antes debo solicitar una cita de cirugía?</summary>
+        <p>
+          Recomendamos agendar con al menos 48 horas de anticipación para realizar
+          la valoración preoperatoria y confirmar el ayuno requerido.
+        </p>
+      </details>
+
+      <h3>Indicadores de progreso y medición</h3>
+      <p>
+        <label for="progreso-campana">Meta de vacunación anual alcanzada:</label>
+        <progress id="progreso-campana" value="75" max="100">75%</progress>
+      </p>
+      <p>
+        <label for="ocupacion-agenda">Ocupación actual de agenda diaria:</label>
+        <meter id="ocupacion-agenda" min="0" max="100" low="30" high="80" optimum="50" value="65">65%</meter>
+      </p>
+
+      <h3>Ventana modal nativa (<code>&lt;dialog&gt;</code>)</h3>
+      <p>
+        <button type="button" id="abrir-dialogo" data-dialog="dialogo-urgencias">
+          Ver protocolo de urgencias
+        </button>
+      </p>
+      <dialog id="dialogo-urgencias" aria-labelledby="titulo-dialogo-urgencias">
+        <h4 id="titulo-dialogo-urgencias">Protocolo de atención de urgencias</h4>
+        <p>
+          Ante ingestión de sustancias tóxicas, traumatismos o dificultad
+          respiratoria, comunícate de inmediato al <strong>+507 998-0000</strong>
+          antes de trasladar a tu mascota para preparar el área de triaje.
+        </p>
+        <button type="button" id="cerrar-dialogo" data-close-dialog>Cerrar</button>
+      </dialog>
+    </section>
+
+    <section id="incrustaciones">
+      <h2>Contenido incrustado (<code>&lt;iframe&gt;</code>)</h2>
+      <p>
+        A continuación se incrusta nuestra página auxiliar interna
+        (<code>paginas/test.html</code>) mediante un marco accesible con atributo
+        <code>title</code> descriptivo:
+      </p>
+      <iframe src="paginas/test.html"
+              title="Vista previa de la página auxiliar de prueba de rutas"
+              width="800"
+              height="360"
+              loading="lazy">
+      </iframe>
+    </section>
+  </main>
+
+  <footer>
+    <address>
+      <strong>Clínica Veterinaria ConSentidos</strong><br>
+      Avenida Central, Santiago de Veraguas, Panamá<br>
+      <a href="tel:+5079980000">+507 998-0000</a> |
+      <a href="mailto:citas@consentidos.example">citas@consentidos.example</a>
+    </address>
+    <p>
+      Última actualización:
+      <time datetime="2026-11-20">20 de noviembre de 2026</time>.
+    </p>
+    <p><a href="#inicio">Volver arriba</a></p>
+    <p>
+      <small>
+        &copy; 2026 Clínica Veterinaria ConSentidos. Proyecto académico del
+        curso Desarrollo de Software V, Universidad Tecnológica de Panamá,
+        Centro Regional de Veraguas. Los datos de contacto son ficticios.
+      </small>
+    </p>
+  </footer>
+
+  <script src="assets/js/componentes.js" defer></script>
+</body>
+</html>
